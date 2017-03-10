@@ -62,24 +62,17 @@ public class Cuadrado {
      * false en caso de que no lo sean
      */
         private boolean IsCuadrado(){
-                if((ladoA.getX()==LadoB.getX())&&(LadoB.getX()==LadoC.getX())&&(LadoC.getX()==LadoD.getX())){
-                    return false;
-             } else{
-                    if((ladoA.getY()==LadoB.getY())&&(LadoB.getY()==LadoC.getY())&&(LadoC.getY()==LadoD.getY())){
-                        return false;
-                    }
-                    else{
-                        if((ladoA.getX()==LadoB.getX())&&(LadoB.getX()==LadoC.getX())&&(LadoC.getX()==LadoD.getX()) 
-                                && (ladoA.getY()!=LadoB.getY())&&(LadoB.getY()!=LadoC.getY())&&(LadoC.getY()!=LadoD.getY())){
-                            return false;
-                        }
-                    } 
-                    if((ladoA.getX()!=LadoB.getX())&&(LadoB.getX()!=LadoC.getX())&&(LadoC.getX()!=LadoD.getX())
-                            &&(ladoA.getY()==LadoB.getY())&&(LadoB.getY()==LadoC.getY())&&(LadoC.getY()==LadoD.getY())){
-                        return false;
-                    }
-                }
-                return true;
+          if (((ladoA.getX()==LadoB.getX())&&(LadoB.getY()!=ladoA.getY())&&(LadoB.getY()==LadoC.getY())&&(LadoB.getX()!=LadoC.getX())&&(ladoA.getY()==LadoD.getY())&&(ladoA.getX()!=LadoD.getX()))&&((LadoC.getX()==LadoD.getX())&&(LadoC.getY()!=LadoD.getY()))){
+              return true;
+          }
+          else {
+              if (((ladoA.getY()==LadoB.getY())&&(LadoB.getX()!=ladoA.getX())&&(LadoB.getX()==LadoC.getX())&&(LadoB.getY()!=LadoC.getY())&&(ladoA.getX()==LadoD.getX())&&(ladoA.getY()!=LadoD.getY()))&&((LadoC.getY()==LadoD.getY())&&(LadoC.getX()!=LadoD.getX()))){
+                  return true;
+              }
+              else{
+                  return false;
+              }
+          }
        }
        /**
         * Metodo que calcula lo longitud de A a B
